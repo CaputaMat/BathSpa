@@ -12,6 +12,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Executable file and source map
 add_executable(vending_machine
     src/main.cpp
+    src/Product.cpp
+    src/ProductCategory.cpp
 )
 
 # Compiler error levels

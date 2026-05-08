@@ -1,3 +1,4 @@
 {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "cmake.sourceDirectory": "/home/mat/Remote/BathSpa/CodeLab/CodeLab(AS2)"
 }

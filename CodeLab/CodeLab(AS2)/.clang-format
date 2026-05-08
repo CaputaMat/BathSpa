@@ -1,0 +1,152 @@
+# ============================================================
+# .clang-format - C++17, clang-format 18
+# ============================================================
+
+# Bazowy styl
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++17
+
+# ------------------------------------------------------------
+# Wciecia
+# ------------------------------------------------------------
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+AccessModifierOffset: -4
+IndentCaseLabels: true
+NamespaceIndentation: None
+
+# ------------------------------------------------------------
+# Wskazniki, referencje
+# ------------------------------------------------------------
+PointerAlignment: Left
+ReferenceAlignment: Pointer
+DerivePointerAlignment: false
+
+# ------------------------------------------------------------
+# Klamry - K&R (przyklejone do konstrukcji)
+# ------------------------------------------------------------
+BreakBeforeBraces: Attach
+Cpp11BracedListStyle: true
+
+# ------------------------------------------------------------
+# Dlugosc linii - bez limitu
+# ------------------------------------------------------------
+ColumnLimit: 0
+
+# ------------------------------------------------------------
+# Jednolinijkowe konstrukcje
+# ------------------------------------------------------------
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortLambdasOnASingleLine: All
+
+# ------------------------------------------------------------
+# Spacje
+# ------------------------------------------------------------
+SpaceBeforeParens: ControlStatements
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: true
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpacesInAngles: Never
+SpacesInCStyleCastParentheses: false
+SpacesInConditionalStatement: false
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+
+# ------------------------------------------------------------
+# Wyrownania
+# ------------------------------------------------------------
+AlignConsecutiveAssignments: None
+AlignConsecutiveDeclarations: None
+AlignConsecutiveMacros: None
+AlignTrailingComments: true
+AlignAfterOpenBracket: Align
+AlignOperands: Align
+AlignEscapedNewlines: Right
+
+# ------------------------------------------------------------
+# Konstruktor - lista inicjalizacyjna w jednej linii
+# ------------------------------------------------------------
+PackConstructorInitializers: CurrentLine
+ConstructorInitializerIndentWidth: 4
+BreakConstructorInitializers: BeforeColon
+
+# ------------------------------------------------------------
+# Argumenty i parametry funkcji
+# ------------------------------------------------------------
+BinPackArguments: true
+BinPackParameters: true
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+ExperimentalAutoDetectBinPacking: false
+
+# ------------------------------------------------------------
+# Operatory
+# ------------------------------------------------------------
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+BreakBeforeConceptDeclarations: Always
+BreakInheritanceList: BeforeColon
+BreakStringLiterals: false
+
+# ------------------------------------------------------------
+# Includy - sortowanie
+# ------------------------------------------------------------
+SortIncludes: CaseSensitive
+SortUsingDeclarations: true
+IncludeBlocks: Preserve
+
+# ------------------------------------------------------------
+# Komentarze
+# ------------------------------------------------------------
+ReflowComments: true
+
+# ------------------------------------------------------------
+# Lambdy
+# ------------------------------------------------------------
+LambdaBodyIndentation: Signature
+
+# ------------------------------------------------------------
+# Namespace
+# ------------------------------------------------------------
+CompactNamespaces: false
+FixNamespaceComments: true
+ShortNamespaceLines: 1
+
+# ------------------------------------------------------------
+# Puste linie
+# ------------------------------------------------------------
+EmptyLineBeforeAccessModifier: LogicalBlock
+EmptyLineAfterAccessModifier: Never
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+SeparateDefinitionBlocks: Leave
+
+# ------------------------------------------------------------
+# Pusta linia na koncu pliku
+# ------------------------------------------------------------
+InsertNewlineAtEOF: true
+
+# ------------------------------------------------------------
+# Pozostale
+# ------------------------------------------------------------
+DeriveLineEnding: false
+UseCRLF: false
+IndentPPDirectives: None
+IndentExternBlock: AfterExternBlock
+IndentRequiresClause: true
+IndentWrappedFunctionNames: false
+RemoveBracesLLVM: false
+QualifierAlignment: Leave

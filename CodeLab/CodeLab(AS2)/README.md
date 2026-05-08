@@ -11,7 +11,10 @@ A console-based **Vending Machine** application that demonstrates the more advan
 | --- | --- |
 | [CMakeLists.txt](CMakeLists.txt) | CMake build configuration — C++17, project name `vending_machine`, strict compiler warnings. |
 | [src/main.cpp](src/main.cpp) | Vending Machine entry point — menu, item selection, payment handling and change calculation. |
-| [include/](include/) | Public header files. |
+| [src/Product.cpp](src/Product.cpp) | `Product` class implementation. |
+| [src/ProductCategory.cpp](src/ProductCategory.cpp) | `ProductCategory` enum helpers (e.g. `categoryName`). |
+| [include/Product.h](include/Product.h) | `Product` class — code, name, price, category, stock with getter methods. |
+| [include/ProductCategory.h](include/ProductCategory.h) | `ProductCategory` enum (`DRINK`, `SNACK`) and `categoryName` helper. |
 | [tests/](tests/) | Unit tests. |
 | `build/` | CMake build artifacts (generated, not tracked). |
 
@@ -61,7 +64,7 @@ To achieve marks in the higher boundaries, the implementation should make use of
 
 ### The Application
 
-The C++ code (e.g. `main.cpp`) and any supplementary assets required to run the vending machine. Submitted as a project saved to this folder and pushed to GitHub before the deadline.
+The C++ source code (under `src/` and `include/`), the `CMakeLists.txt` build configuration, and any supplementary assets required to run the vending machine. Submitted as a project saved to this folder and pushed to GitHub before the deadline.
 
 ### Development Document
 

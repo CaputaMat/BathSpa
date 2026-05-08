@@ -44,6 +44,7 @@
             "type": "shell",
             "command": "xterm",
             "args": [
+                "-hold",
                 "-e",
                 "'${workspaceFolder}/build/vending_machine'"
             ],
