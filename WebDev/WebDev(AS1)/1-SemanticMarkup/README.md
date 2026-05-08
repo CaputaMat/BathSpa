@@ -2,6 +2,9 @@
 
 A "Cooking with Andy!" recipe page rebuilt with semantic HTML5 elements — demonstrating correct use of document landmarks, content sectioning, headings and list structure for a chocolate-chip cookie recipe.
 
+## Remember
+<span style="color:red"> `<meta name="keywords">` - is effectively obsolete for SEO.</span>
+
 ## Files
 
 | File | Description |
