@@ -3,6 +3,8 @@
 
 A console-based **Vending Machine** application that demonstrates the more advanced techniques covered in the module — functions, error checking, and object-oriented programming — built on top of the fundamentals from [S1](../CodeLab(AS1)/).
 
+The machine is modelled as a **rectangular grid of slots** identified by a column letter and a row number (e.g. `A1`, `B3`). Each slot may hold a single `Product` or be empty. The grid is rendered as an ASCII table centred on the terminal width.
+
 ---
 
 ## Project Layout
@@ -10,13 +12,40 @@ A console-based **Vending Machine** application that demonstrates the more advan
 | Path | Description |
 | --- | --- |
 | [CMakeLists.txt](CMakeLists.txt) | CMake build configuration — C++17, project name `vending_machine`, strict compiler warnings. |
-| [src/main.cpp](src/main.cpp) | Vending Machine entry point — menu, item selection, payment handling and change calculation. |
-| [src/Product.cpp](src/Product.cpp) | `Product` class implementation. |
-| [src/ProductCategory.cpp](src/ProductCategory.cpp) | `ProductCategory` enum helpers (e.g. `categoryName`). |
-| [include/Product.h](include/Product.h) | `Product` class — code, name, price, category, stock with getter methods. |
-| [include/ProductCategory.h](include/ProductCategory.h) | `ProductCategory` enum (`DRINK`, `SNACK`) and `categoryName` helper. |
+| [src/main.cpp](src/main.cpp) | Entry point — constructs a `VendingMachine`, stocks slots with products, and renders the grid to `stdout`. |
+| [include/VendingMachine.h](include/VendingMachine.h) | `VendingMachine` class — owns a labelled grid of `GridSlot` objects keyed by slot label (e.g. `"A1"`). |
+| [src/VendingMachine.cpp](src/VendingMachine.cpp) | `VendingMachine` implementation — grid construction, `stock()` placement, ASCII `render()` (with UTF-8 aware width calculation). |
+| [include/GridSlot.h](include/GridSlot.h) | `GridSlot` class — one slot in the grid: column letter, row number, computed label, and an `std::optional<Product>`. |
+| [src/GridSlot.cpp](src/GridSlot.cpp) | `GridSlot` implementation — constructor and `label()` builder. |
+| [include/Product.h](include/Product.h) | `Product` class — name, price, and nested `Product::Category` enum (`DRINK`, `SNACK`) with `toString` helper. |
+| [src/Product.cpp](src/Product.cpp) | `Product` implementation. |
+| [include/Utils.h](include/Utils.h) | Cross-platform console helpers — terminal width, centred output, screen clear. |
+| [src/Utils.cpp](src/Utils.cpp) | `Utils` implementation — Windows (`<windows.h>`) and POSIX (`<sys/ioctl.h>`) backends. |
 | [tests/](tests/) | Unit tests. |
 | `build/` | CMake build artifacts (generated, not tracked). |
+
+---
+
+## Domain Model
+
+```
+VendingMachine
+├── machine_label : std::string
+├── columns, rows : int
+└── grid : std::map<std::string, GridSlot>     // keyed by slot label, e.g. "A1"
+        │
+        └── GridSlot
+            ├── column_label : char            // 'A', 'B', ...
+            ├── row_label    : int             // 1, 2, ...
+            └── product      : std::optional<Product>
+                                │
+                                └── Product
+                                    ├── label    : std::string
+                                    ├── price    : double
+                                    └── category : Product::Category {DRINK, SNACK}
+```
+
+Slot labels are **unique by construction** — `std::map` enforces it at the type level. Empty slots are represented by `std::optional<Product>` having no value.
 
 ---
 

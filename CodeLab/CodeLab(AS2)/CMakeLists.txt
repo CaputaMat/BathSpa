@@ -12,10 +12,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Executable file and source map
 add_executable(vending_machine
     src/main.cpp
-    src/VendingMachine.cpp
-    src/GridSlot.cpp
-    src/Product.cpp
-    src/Utils.cpp
 )
 
 # Compiler error levels
